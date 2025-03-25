@@ -11,24 +11,42 @@
             box-sizing: border-box;
         }
         body {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            display: flex;
+            overflow: hidden;
             width: 100vw;
             height: 100vh;
-            overflow: hidden;
         }
-        .fullscreen-image {
-            width: 100%;
-            height: 100%;
+        .slider {
+            display: flex;
+            width: 600vw;
+            height: 100vh;
+            animation: slide 12s infinite alternate ease-in-out;
+        }
+        .slider img {
+            width: 100vw;
+            height: 100vh;
             object-fit: cover;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(0); }
+            25% { transform: translateX(-100vw); }
+            45% { transform: translateX(-100vw); }
+            50% { transform: translateX(-200vw); }
+            70% { transform: translateX(-200vw); }
+            75% { transform: translateX(-300vw); }
+            95% { transform: translateX(-300vw); }
+            100% { transform: translateX(0); }
         }
     </style>
 </head>
 <body>
-    <img src="imagen1.jpg" alt="Imagen 1" class="fullscreen-image">
-    <img src="imagen2.jpg" alt="Imagen 2" class="fullscreen-image">
-    <img src="imagen3.jpg" alt="Imagen 3" class="fullscreen-image">
-    <img src="imagen4.jpg" alt="Imagen 4" class="fullscreen-image">
-    <img src="imagen5.jpg" alt="Imagen 5" class="fullscreen-image">
-    </body>
+    <div class="slider">
+        <img src="imagen1.jpg" alt="Imagen 1">
+        <img src="imagen2.jpg" alt="Imagen 2">
+        <img src="imagen3.jpg" alt="Imagen 3">
+        <img src="imagen4.jpg" alt="Imagen 4">
+        <img src="imagen5.jpg" alt="Imagen 5">
+        </div>
+</body>
 </html>
